@@ -12,7 +12,7 @@ namespace InsertSort
         {
             int[] input = new int[] { 3, 6, 4, 2, 11, 10, 5 };
 
-            SelectSort(input);
+            InsertSort(input);
 
             foreach (int t in input)
             {
@@ -20,7 +20,7 @@ namespace InsertSort
             }
         }
 
-        public static void SelectSort(int[] array)
+        public static void InsertSort(int[] array)
         {
             if (array != null)
             {
@@ -34,17 +34,14 @@ namespace InsertSort
 
                     int n = index - 1;
 
-                    while (n > 0 && array[n] > current)
+                    while (n >= 0 && array[n] > current)
                     {
                         // 移动位置
                         array[n + 1] = array[n];
                         n--;
                     }
 
-                    if (n != index - 1)
-                    {
-                        array[n + 1] = current;
-                    }
+                    array[n + 1] = current;
                 }
             }
         }
